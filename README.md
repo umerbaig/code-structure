@@ -6,8 +6,6 @@ This repository contains a backend application for managing jira, notion, integr
 
 ## Simplified Project Structure
 
-[](https://github.com/superstack-digital/padel-backend#simplified-project-structure)
-
 The application is organized into a few key directories:
 
 ```
@@ -18,17 +16,17 @@ src/
 |       |-- EmbeddingInterface.ts   // Interface for Embedding data access
 |       |-- EmbeddingRepository.ts  // Supabase implementation of EmbeddingInterface
 |	|-- data_sources/
-|   	|-- Jira.ts    // Jira data source using LlamaIndex
-|   	|-- Notion.ts  // Notion data source using LlamaIndex
-|		|-- Pdf.ts.    // Pdf data source using LlamaIndex
+|   	|-- Jira.ts                // Jira data source using LlamaIndex
+|   	|-- Notion.ts              // Notion data source using LlamaIndex
+|		|-- Pdf.ts                // Pdf data source using LlamaIndex
 |	|-- llms/
 |		|-- providers/
-|			|-- openrouter.ts // open router as a llm provider
-|			|-- openai.ts	  // open ai as a llm provider
-| 			|-- antrhopic.ts // antrhopic as a llm provider
-|		|-- prompting.ts // create a prompt with returned context
+|			|-- openrouter.ts    // open router as a llm provider
+|			|-- openai.ts	     // open ai as a llm provider
+| 			|-- antrhopic.ts    // antrhopic as a llm provider
+|		|-- prompting.ts        // create a prompt with returned context
 |-- api/
-|   |-- chat.ts				  // Edge function to chat 
+|   |-- chat.ts				   // Edge function to chat 
 |-- webhooks/
 |   |-- jiraWebhook.ts          // Edge function for Jira Webhook
 |   |-- notionWebhook.ts       // Edge function for Notion Webhook
@@ -39,16 +37,13 @@ src/
 |-- utils/
     |-- supabaseClient.ts         // Initializes and exports the Supabase client
     |-- llamaIndex.ts.           // Initializes and exports the LlamaIndex client
-
 ```
 
 ### Domain Layer (`src/domain/`)
 
-[](https://github.com/superstack-digital/padel-backend#domain-layer-srcdomain)
 
 #### Embeddings
 
-[](https://github.com/superstack-digital/padel-backend#bookings)
 
 -   `Embedding.ts`: The  `Embedding`  entity encapsulating the text embeddings data and any domain logic associated with a embedding.
 -   `EmbeddingInterface.ts`: An interface defining the contract for data access methods related to text embeddings.
@@ -71,15 +66,12 @@ src/
 
 ### Services Layer (`src/services/`)
 
-[](https://github.com/superstack-digital/padel-backend#services-layer-srcservices)
 
 -   `JiraService.ts`: Encapsulates the business logic for managing jira related stuff.
 - `NotionService.ts`: Encapsulated the business logic for managing notion related stuff.
 - `ChatService.ts`: Encapsulated the business logic for managing chat.
 
 ### Utils (`src/utils/`)
-
-[](https://github.com/superstack-digital/padel-backend#utils-srcutils)
 
 -   `supabaseClient.ts`: Provides the initialized Supabase client, which is used throughout the application to interact with Supabase services.
 - `llamaIndex.ts`: Provides the initialized LlamaIndex client, which is used througout the application.
